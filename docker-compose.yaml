@@ -1,0 +1,15 @@
+version: '3'
+services:
+  alsvietnam-service:
+    container_name: alsvietnam-service
+    build:
+      context: ./alsvietnam-article-service
+    image: alsvietnam-service:latest
+    ports:
+      - "8081:8080"
+    volumes:
+      - /var/firebase:/var/firebase
+      - /var/temp:/var/temp
+      - /var/log/spring_logs:/home/logs
+    environment:
+      SPRING_PROFILES_ACTIVE: prod

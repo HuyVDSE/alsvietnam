@@ -1,0 +1,72 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+spring:
+  main:
+    allow-circular-references: true
+  datasource:
+    url:
+    username:
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    protocol: smtp
+    default-encoding: UTF-8
+    username:
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret: YrigvpjHSpqIYLmS3rQVQlud50KqMyt2
+  expired: 14 #expired after 14 day
+  issuer: alsvietnam
+
+google:
+  firebase:
+    bucket: alsvietnam.appspot.com
+    url: https://storage.googleapis.com/${google.firebase.bucket}/%s
+    private-key: D:\Config\alsvietnam-firebase-adminsdk-pmlqv-9f56763a79.json
+
+location:
+  upload-folder: D:\temp
+
+vnpay:
+  api-version: 2.1.0
+  pay-url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+  return-url: http://localhost:8080/v1/donations/callback
+  tmn-code:
+  hash-secret:
+  api-url: https://sandbox.vnpayment.vn/merchant_webapi/merchant.html
+
+mail:
+  address: alsvietnam@gmail.com
+  active-profile: GMAIL
+  assign-task-title: "ALS Việt Nam: Assign Task Notification"
+  un-assign-task-title: "ALS Viet Nam: Unassigned Task Notification"
+  finish-task-title: "ALS Viet Nam: Task Finished Notification"
+  assign-manage-task-title: "ALS Viet Nam: Assign Manage Task"
+  verify-code-email-title: "ALS Vietnam: Verify Code Email"
+  request_member-result: "ALS Viet Nam: Request Member Result"
+
+domain:
+  blog: http://localhost:3000
+  portal: http://localhost:3030
+
+logging:
+  file:
+    path: D:\spring_logs

@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url:
+    username:
+    password:
+
+location:
+  upload-folder: /opt/alsvietnam/uploads

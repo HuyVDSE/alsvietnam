@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      style="background-color: #F5F4F0;font-size: 16px;line-height: 1.6;font-family: Mallory, &quot;Gill Sans&quot;, &quot;Gill Sans MT&quot;, Calibri, Verdana, sans-serif;color: #444;margin: 0;"
+      lang="en">
+<head>
+    <title>Email Notification</title>
+    <style type="text/css">
+        /* Font Embeds -------------------------------------------- */
+        @font-face {
+            font-family: 'Mallory';
+            src: url('https://static.production.site.facultyclients.co/newsletter/Mallory-Book.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Mallory';
+            font-style: italic;
+            src: url('https://static.production.site.facultyclients.co/newsletter/Mallory-Book-Italic.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Mallory';
+            font-weight: bold;
+            src: url('https://static.production.site.facultyclients.co/newsletter/Mallory-Bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Mallory';
+            font-weight: bold;
+            font-style: italic;
+            src: url('https://static.production.site.facultyclients.co/newsletter/Mallory-Bold-Italic.woff') format('woff');
+        }
+
+        html {
+            background-color: #F5F4F0;
+            font-size: 16px;
+            line-height: 1.6;
+            font-family: Mallory, "Gill Sans", "Gill Sans MT", Calibri, Verdana, sans-serif;
+            color: #444;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Layout ----------------------------------------------- */
+        div.main {
+            max-width: 600px;
+            background-color: #fff;
+            margin: 0 auto;
+        }
+
+        div.header {
+            padding: 30px;
+            border-bottom: 1px solid #E5E2D9;
+            text-align: right;
+        }
+
+        div.header img {
+            display: block;
+        }
+
+        div.header img.logoword {
+            float: left;
+        }
+
+        div.header p {
+            display: none;
+        }
+
+        div.body {
+            padding: 30px;
+        }
+
+        div.footer {
+            font-size: 12px;
+            color: #777;
+            margin: 50px -30px 0 -30px;
+            padding: 20px 30px 0;
+            border-top: 1px solid #E5E2D9;
+        }
+
+        div.clear {
+            height: 0;
+            clear: both;
+        }
+
+        div.bleed {
+            margin: -31px -30px 30px -30px;
+        }
+
+        /* Typography ------------------------------------------ */
+        h1 {
+            font-size: 1.6em;
+            letter-spacing: -0.01em;
+            line-height: 1.333;
+            font-weight: normal;
+            margin: 1.5em 0 1.5em;
+        }
+
+        h2 {
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 0.9em;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: rgba(0, 0, 0, 0.5);
+            margin-top: 2em;
+        }
+
+        a {
+            color: #3e824d;
+        }
+
+        a:hover {
+            color: #444;
+        }
+
+        blockquote {
+            font-size: 0.9em;
+            padding: 0 0 0 1.5em;
+            border-left: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Images, Buttons, Etc. -------------------------------- */
+        img.full {
+            display: block;
+            width: 100%;
+            margin: 0;
+        }
+
+        a.button {
+            display: inline-block;
+            background-color: #3e824d;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 75%;
+            letter-spacing: 0.1em;
+            padding: 0.75rem 1.5rem;
+        }
+
+        a.button.large {
+            font-size: 1.2em;
+        }
+
+        a.button.low {
+            background-color: #E4DFD1;
+            color: #56524A;
+        }
+    </style>
+</head>
+<body style="margin: 0;padding: 20px;">
+
+<div class="main" style="max-width: 600px;background-color: #fff;margin: 0 auto;">
+    <div class="header" style="padding: 20px; text-align: right;">
+        <img src="https://firebasestorage.googleapis.com/v0/b/alsvietnam.appspot.com/o/logo%2Falsvietnam_logo.jpg?alt=media&token=a29a3689-7542-4409-a9d1-5a2f1c6f89d5"
+             width="150" alt="Faculty" class="logoword" style="display: block;float: left;">
+        <div class="clear" style="height: 0;clear: both;"></div>
+    </div>
+    <div class="body" style="padding: 30px;">
+        <h1 style="font-family: Open Sans, Helvetica, Arial, sans serif; font-size: 24px; font-weight: 700; line-height: 130%; color: #0E1318; letter-spacing: -0.3px; margin: 0 0 16px; text-align: left; text-align: start">
+            Task Finished Notification</h1>
+        <p th:text="'Dear ' + ${member} + ','"
+           style="color: #565a5d; font-family: Open Sans, Helvetica, Arial, sans serif; font-weight: 400; line-height: 160%; font-size: 14px; margin: 0; text-align: left; text-align: start">
+            Dear member,
+        </p>
+        <p th:text="'Manager ' + ${manager} + ' has remove you from task: ' + ${task.name}">This is assign task
+            notification</p>
+        <p><br>
+            <a href="#" class="button"
+               style="color: #fff;display: inline-block;background-color: #3e824d;font-family: Open Sans, Helvetica, Arial, sans serif;border-radius: 4px;text-decoration: none;text-transform: uppercase;font-size: 75%;font-weight:600;letter-spacing: 0.1em;padding: 0.75rem 1.5rem;">
+                View Detail
+            </a>
+        </p>
+        <p><br>If you received this email by mistake, delete it. You won&rsquo;t hear from us again if you don&rsquo;t
+            click the button.
+        </p>
+        <p style="margin-top:50px ">Regards,</p>
+        <p>ALS Viet Nam Organization.</p>
+        <div class="footer"
+             style="font-size: 12px;color: #777;margin: 50px -30px 0 -30px;padding: 20px 30px 0;border-top: 1px solid #E5E2D9;">
+            <p>For questions about this email, please contact:<br>
+                <a href="mailto:alsvietnam@gmail.com" style="color: #3e824d;">alsvietnam@gmail.com</a></p>
+        </div>
+    </div>
+</div>
+<span itemscope="" itemtype="http://schema.org/EmailMessage">
+        <span itemprop="description" content="We need to confirm your email address."></span>
+    <span itemprop="action" itemscope="" itemtype="http://schema.org/ConfirmAction">
+            <meta itemprop="name" content="Confirm Subscription">
+                <span itemprop="handler" itemscope="" itemtype="http://schema.org/HttpActionHandler">
+                <meta itemprop="url"
+                      content="https://roost.us2.list-manage.com/subscribe/smartmail-confirm?u=b46cc084c8bdde1ea04555baa&id=1af03beada&e=4edbc8ee0c&inline=true">
+                <link itemprop="method" href="https://schema.org/HttpRequestMethod/POST">
+                </span>
+    </span>
+    </span>
+
+</body>
+</html>

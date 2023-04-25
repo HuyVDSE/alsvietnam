@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url:
+    username:
+    password:
+
+google:
+  firebase:
+    private-key: /opt/firebase/alsvietnam-firebase.json
+
+location:
+  upload-folder: /opt/alsvietnam/uploads
+
+vnpay:
+  return-url: https://alsvietnam.org/donation-notification
+
+domain:
+  blog: https://alsvietnam.org
+  portal: https://portal.alsvietnam.org
+
+logging:
+  file:
+    path: /home/logs
